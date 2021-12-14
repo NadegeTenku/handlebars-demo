@@ -20,25 +20,39 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
+// handlebars configuration to work with express & sequelize model
+const handlebars = expressHandlebars({
+    handlebars : allowInsecurePrototypeAccess(Handlebars)
+})
+
+//let this express app know that we're using handlebars
+app.engine('handlebars', handlebars);
+app.set('view engine', 'handlebars')
+
+
+    // await sequelize.sync({ force: true});
 
 const restaurantChecks = [
     check('name').not().isEmpty().trim().escape(),
     check('image').isURL(),
     check('name').isLength({ max: 50 })
 ]
-
+//res.render helps us to connect with hanldebars where res.render is the view engine
 app.get('/restaurants', async (req, res) => {
     const restaurants = await Restaurant.findAll();
-    res.json(restaurants);
+    //2 arguuments where 1- name of template file name & 2- name of the data you are passing.
+    res.render("restaurants", { restaurants });
 });
 
 app.get('/restaurants/:id', async (req, res) => {
+    //const restau is the variable made to look for restau by Pk
+    const restaurants = await Restaurant.findAll();
     const restaurant = await Restaurant.findByPk(req.params.id, {include: {
             model: Menu,
             include: MenuItem
         }
     });
-    res.json(restaurant);
+    res.render("restaurant", {restaurant, restaurants});
 });
 
 app.post('/restaurants', restaurantChecks, async (req, res) => {
