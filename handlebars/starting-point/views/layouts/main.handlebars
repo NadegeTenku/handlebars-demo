@@ -1,27 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <h1>Welcome to NAD's RESTAURANT PAGE</h1>
+    <h4>Take A Tour @ Happy Bellies</h4>
+    <h5>There are {{restaurants.length}} restaurants here!</h5>
+    <div class="row">
+            <h6>
+            <a href="/nRestaurants/{{id}}">About Me</a>
+            <a href="/nRestaurants/{{id}}">Website</a>
+            <a href="/nRestaurants/{{id}}">Reserve A Table</a>
+            <a href="/nRestaurants/{{id}}">Place Your Order</a>
+            <a href="/nRestaurants/{{id}}">Contact Us</a>
+            </h6>
+    </div>
+</body>
+<body>
+    <div class="col">
+        <div class="dropdown">
+            <button class="dropbtn">Restaurants in Dallas</button>
+                <div class="dropdown-content">
+                    {{#each restaurants}}
+                        <a href="../nRestaurants/{{id}}"> {{name}}</a>
+                    {{/each}}
+                </div>
+        </div>
+    </div>
+            
+    {{{body}}}
+    {{!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}
+    <script src='/nRestaurant.js'></script>
+</body>
+
+<tail>
+    <h3>Thank You</h3>
+</tail>
+    
+</html>
+
+
+
+{{!-- all of these were between <head></head> --}}
+    {{!-- <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> --}}
-    <link rel="stylesheet" href="/style.css"/>
-    <title>Restaurants</title>
-</head>
-<body>
-    <div class="dropdown">
-            <button class="dropbtn">Restaurants</button>
-            <div class="dropdown-content">
-                
-                <a href="../restaurants">All Restaurants</a>
-
-                {{#each restaurants}}
-                <a href="../restaurants/{{id}}"> {{name}}</a>
-                {{/each}}
-            </div>
-          </div>
-    <h1>Fancy Restaurants!!!</h1>
-    {{{body}}}
-    
-</body>
-</html>
+    {{!-- <title>Restaurants</title> --}}

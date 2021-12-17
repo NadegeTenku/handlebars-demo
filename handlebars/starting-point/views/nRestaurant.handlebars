@@ -1,0 +1,13 @@
+<section>
+    <div class="big-block">
+        <h2 id="item-name">{{restaurant.name}}</h2>
+        <img class="item-img" src="{{restaurant.image}}" />
+        <h6>Likes: <span id="like-counter">{{restaurant.likes}}</span></h6>
+        <h6>Dislikes: <span id="dislike-counter">{{restaurant.dislikes}}</span></h6>
+        {{!-- <h3>Deletes: <button onClick={{deleteRestaurant}}>Deleted from list</button></h3> --}}
+        <button id="like-btn">Like</button>
+        <button id="dislike-btn">Dislike</button>
+        <button id="delete-btn">Delete</button>
+    </div>
+</section>
+<script src='/nRestaurant.js'></script>

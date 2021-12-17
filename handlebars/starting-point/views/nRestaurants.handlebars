@@ -1,0 +1,18 @@
+<section>
+    <div class="container">
+    {{#each restaurants}}
+        <div class="row">
+            <div class="col">
+                <img class="images" src="{{this.image}}"/>
+                <div class="dropdown">
+                    <a href="/nRestaurants/{{id}}">View {{name}}</a>
+                    <a href="/nRestaurants/{{id}}">Menu of {{name}}</a>
+                </div>
+            </div> 
+        </div>
+    {{/each}}
+             <a href="/new-restaurant" class="new-restaurant-btn">Add New Restaurant</a>
+</div>
+   
+</section>
+<script src="/nRestaurant.js"></script>

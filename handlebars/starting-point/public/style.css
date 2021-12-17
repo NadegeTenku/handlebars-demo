@@ -1,13 +1,58 @@
 body {
-    background-color: rgb(0, 109, 128);
+    background-color: hsla(7, 10%, 5%, .35);
+}
+
+h1 {
+  color: hsla(300, 4%, 5%, 0.947);
+  font-family: courier;
+  /* font-size: 160%; */
+}
+
+h3 {
+  color: hsla(330, 5%, 8%, 0.851);
+  font-family: verdana;
+  /* font-size: 300%; */
+}
+
+h4 {
+  color: hsla(21, 79%, 41%, 0.666);
+}
+
+h5 {
+  color: hsla(20, 79%, 4%, 0.872);
+}
+
+h6 {
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+p {
+  color: initial;
+}
+
+.images {
+  border: .3rem solid rgba(242, 255, 0, 0.194);
+  margin-right: 5%;
+  width: 30em;
+  height: 85%;
+  float: center;
+}
+
+.font {
+color: rgba(0, 0, 0, 0.057);
+size: 1px;
 }
 
 .dropbtn {
-    background-color: #04aa6d;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+    margin: 5% 0;
+    background-color: 4mm ridge rgba(170, 50, 220, .6);
+    color: initial;
+    padding: 3% 0;
+    font-size: relative;
+    border: thick double #32a1ce;;
   }
   
   .dropdown {
@@ -18,7 +63,7 @@ body {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #f1f1f16d;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
